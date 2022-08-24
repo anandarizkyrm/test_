@@ -1,0 +1,13 @@
+.card {
+    padding: 10px;
+    color: #303030;
+    margin : 1px;
+    border-radius: 2px;
+}
+
+.cardComponent{
+  max-height: 18rem;
+  background: rgb(27, 27, 27);
+  color : white;
+}
+

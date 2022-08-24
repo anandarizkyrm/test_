@@ -1,0 +1,23 @@
+.nav{
+    width: 99vw;
+    height: 52px;
+    background: rgb(24, 24, 24);
+    display: flex;
+    align-items: center;
+    padding: 0 3rem;
+    justify-items: center;
+    justify-content: space-between;
+}
+
+.h3{
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+.componentsFilter{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 27rem;
+}
