@@ -2,7 +2,7 @@ import axios from "axios";
 import { getCookie, setCookie } from 'cookies-next';
 
 const CostumerAPI = {
-  all: async(token : any) => {
+  all: async(token : string) => {
       try{
           const data = await fetch(`https://mitramas-test.herokuapp.com/customers?`, {
           headers: {
@@ -15,16 +15,15 @@ const CostumerAPI = {
 
           return res
       }catch(error : any){
-       
-
-        
         return  JSON.parse(JSON.stringify(error))
       }
 
   },
-  login: async(account : any) => {
+  login: async(account : any, router : any) => {
        await axios.post(`https://mitramas-test.herokuapp.com/auth/login`, account ).then( (res : any )=>{
           setCookie('token', res.data.access_token , { maxAge: res.data.expires_in })
+          window.alert('succes login')
+          router.push('/')
           return res
      }).catch((err : any)=>{
            window.alert(err.message)
@@ -56,7 +55,7 @@ update: async (data : any, router : any) => {
   },
 
   create: async (data : any, router : any) => {
-    const token : any=  getCookie('token');
+    const token : any =  getCookie('token');
    await axios.post(`https://mitramas-test.herokuapp.com/customers`,data,
       {
         headers: {

@@ -1,6 +1,7 @@
 import { Button, Form, Input } from "antd";
 import { GetServerSideProps } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import CostumerAPI from "../src/api/customers";
 import styles from "../styles/login.module.css";
@@ -9,8 +10,9 @@ const Login = () => {
     email: "akun12@mig.id",
     password: "BA8A9E03",
   });
-  const onFinish = (values: any) => {
-    CostumerAPI.login(state);
+  const router = useRouter();
+  const onFinish = () => {
+    CostumerAPI.login(state, router);
   };
 
   const handleChange = (e: any): void => {
