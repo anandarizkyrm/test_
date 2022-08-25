@@ -28,12 +28,6 @@ const Home = ({ data }: IProps) => {
   const [editVisible, setEditVisible] = useState(false);
   const [id, setId] = useState(null);
 
-  if (
-    data.message ==
-    "invalid json response body at https://mitramas-test.herokuapp.com/customers? reason: Unexpected token U in JSON at position 0"
-  ) {
-    return deleteCookie("token");
-  }
   if (data.success !== true) return <ErrorMessage message={data.message} />;
   return (
     <div className={styles.container}>

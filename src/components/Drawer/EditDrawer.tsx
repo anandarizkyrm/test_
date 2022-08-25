@@ -129,7 +129,7 @@ const EditDrawer = ({ visible, setVisible, datas, id }: IProps) => {
                 Job Title
               </label>
               <Input
-                name="jon_title"
+                name="job_title"
                 value={state.job_title}
                 onChange={(e: any) => handleChange(e)}
                 placeholder="Please enter job Title"
