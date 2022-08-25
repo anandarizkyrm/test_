@@ -21,7 +21,7 @@ const CostumerAPI = {
   },
   login: async(account : any, router : any) => {
        await axios.post(`https://mitramas-test.herokuapp.com/auth/login`, account ).then( (res : any )=>{
-          setCookie('token', res.data.access_token , { maxAge: res.data.expires_in })
+          setCookie('token', res.data.access_token , { maxAge: 1440 })
           window.alert('succes login')
           router.push('/')
           return res
